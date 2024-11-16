@@ -1,0 +1,22 @@
+Point2x utama : 
+1. Express = Untuk router API 
+    - route 
+        -- route bisa get, post, put, delete , etc 
+        -- bisa ditambah middleware di setiap route, contohnya authentication
+    - controller : 
+        -- req 
+            -- req.header("Authorization") = ambil data dari request header 
+            -- req.query = ambil query ?id=123
+            -- req.param = ambil param localhost/api/user/:id
+        -- res 
+            -- status , Okay (200), Not Found (404), Internal Server (500)
+            -- send , json, array, text
+    - model 
+        -- di postgre sql bisa pake sql query 
+        -- configurasi postgre bisa lihat di src/config/db.js
+
+2. Deploy untuk API free 
+    - Untuk Database bisa deploy ke superbase 
+    - Untuk API bisa deploy ke vercel 
+
+3. Swagger (Still Progressed)
