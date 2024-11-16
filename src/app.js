@@ -3,6 +3,8 @@ import occupationRoutes from './routes/occupationRoutes.js'
 import provinceRoutes from './routes/provinceRoutes.js'
 import cityRoutes from './routes/cityRoutes.js'
 import userRoutes from './routes/userRoutes.js'
+import districRoutes from'./routes/districtRoutes.js'
+import clientRoutes from './routes/clientRoutes.js'
 import swaggerSpec from './swaggerConfig.js'
 import swaggerUi from 'swagger-ui-express'
 
@@ -16,6 +18,8 @@ app.use('/api/occupations', occupationRoutes)
 app.use('/api/provinces', provinceRoutes)
 app.use('/api/citys', cityRoutes)
 app.use('/api/users',userRoutes)
+app.use('/api/districts',districRoutes)
+app.use('/api/clients',clientRoutes)
 
 app.get("/", async (req,res,next) => {
     return res.send("hello")

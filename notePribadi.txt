@@ -15,8 +15,21 @@ Point2x utama :
         -- di postgre sql bisa pake sql query 
         -- configurasi postgre bisa lihat di src/config/db.js
 
-2. Deploy untuk API free 
+2. Authentication 
+    - JWT token untuk generate token yang dipakai di header 
+    - bycrpt untuk encrypt password 
+
+3. Send Email 
+    - Untuk bisa send email dengna gmail, pertama di gmail account pergi ke security dan buat 2-factor authentication 
+    - Selanjutnya buat app password dan simpan untuk digunakan di nodemailer 
+    - contoh penggunaan nodemailer di node js bisa dilihat di src/utils/sendEmail.js
+
+4. Query in model 
+    - SELECT, INSERT, ...  (basic CRUD)
+    - SELECt ... LIMIT 5 OFFSET [0,5,10] ( untuk pagination)
+
+5. Deploy untuk API free 
     - Untuk Database bisa deploy ke superbase 
     - Untuk API bisa deploy ke vercel 
 
-3. Swagger (Still Progressed)
+6. Swagger (Still Progressed)

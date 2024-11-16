@@ -2,8 +2,6 @@ import { fetchAllCityByProvinceID } from "../model/citys.js"
 
 export const getAllCityByProvinceID = async (req,res,next) => {
     try{
-        console.log("req.query = ",req.query)
-        console.log("req.query.province_id = ",req.query.province_id)
         const province_id = req.query.province_id
         if(province_id){
             const citys = await fetchAllCityByProvinceID(province_id)
@@ -16,7 +14,6 @@ export const getAllCityByProvinceID = async (req,res,next) => {
         }
     }
     catch(err){
-        console.log("getAllCityByProvinceID err = ",err)
         res.status(500).send({
             error:"Internal Server Error"
         })
