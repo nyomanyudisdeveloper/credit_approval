@@ -17,4 +17,8 @@ app.use('/api/provinces', provinceRoutes)
 app.use('/api/citys', cityRoutes)
 app.use('/api/users',userRoutes)
 
+app.get("/", async (req,res,next) => {
+    return res.send("hello")
+})
+
 export default app
