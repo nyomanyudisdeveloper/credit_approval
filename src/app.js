@@ -5,14 +5,14 @@ import cityRoutes from './routes/cityRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import districRoutes from'./routes/districtRoutes.js'
 import clientRoutes from './routes/clientRoutes.js'
-import swaggerSpec from './swaggerConfig.js'
+import swaggerSpec from '../swaggerConfig.js'
 import swaggerUi from 'swagger-ui-express'
 
 const app = express()
 
 app.use(express.json())
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/occupations', occupationRoutes)
 app.use('/api/provinces', provinceRoutes)

@@ -1,0 +1,35 @@
+Users:
+    - register (Done)
+        -- swagger
+        -- 200 
+        -- validation email (format, existing) (DONE)
+        -- validation role (DONE)
+        -- validation password (length,lowercase,uppercase,specialcharacter) (Partial, only length)
+    - login  (Done)
+        -- swagger 
+        -- 200 
+        -- validation email or password 
+
+Provinces:
+    - get all data  (Done)
+        -- swagger 
+        -- 200 
+        -- validation already login 
+        -- validate admin only
+
+Citys: 
+    - get all citys (Done)
+        -- swagger 
+        -- 200 
+        -- validation already login 
+        -- validate admin only 
+        -- validate query province_id
+
+Districts
+     - get all citys (Done)
+        -- swagger 
+        -- 200 
+        -- validation already login 
+        -- validate admin only 
+        -- validate query city_id
+

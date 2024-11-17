@@ -1,19 +1,20 @@
 import pool from "../config/db.js"
 
 
-export const fetchRegisterUser = async (username,password,role) => {
+export const fetchRegisterUser = async (email,password,role) => {
     const user = await pool.query(`
-        INSERT INTO users(username,password,role)
-        VALUES('${username}','${password}','${role}')
+        INSERT INTO users(email,password,role)
+        VALUES('${email}','${password}','${role}')
+        RETURNING *;
     `)
     return user.rows[0]
 }
 
-export const fetchGetUserByUserName = async (username) => {
+export const fetchGetUserByEmail = async (email) => {
     const user = await pool.query(`
         SELECT * 
         FROM users 
-        WHERE username = '${username}'
+        WHERE email = '${email}'
     `)
 
     return user.rows[0]

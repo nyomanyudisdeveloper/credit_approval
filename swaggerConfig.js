@@ -9,14 +9,22 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'API documentation for credit approval',
     },
-    servers: [
+    components: {
+      securitySchemes: {
+        BearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT', // Optional, specifies the token format
+        },
+      },
+    },
+    security: [
       {
-        url: 'http://localhost:3000', // Update with your base URL
-        description: 'Local server',
+        BearerAuth: [], // Apply globally to all endpoints by default
       },
     ],
   },
-  apis: ['./routes/*.js'], // Path to your route files with Swagger annotations
+  apis: ['./src/routes/*.js'], // Path to your route files with Swagger annotations
 };
 
 const swaggerSpec = swaggerJSDoc(swaggerOptions);

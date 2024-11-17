@@ -27,9 +27,10 @@ Point2x utama :
 4. Query in model 
     - SELECT, INSERT, ...  (basic CRUD)
     - SELECt ... LIMIT 5 OFFSET [0,5,10] ( untuk pagination)
+    - RETURNING *; (untuk return new data ketika INSERT INTO)
 
 5. Deploy untuk API free 
     - Untuk Database bisa deploy ke superbase 
-    - Untuk API bisa deploy ke vercel 
+    - Untuk API bisa deploy ke vercel , untuk node js perlu ditambahkan vercel.json
 
 6. Swagger (Still Progressed)
