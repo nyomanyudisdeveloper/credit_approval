@@ -33,7 +33,7 @@ const routes = express.Router()
  *       500:
  *         description: Internal Server Error
  */
-routes.get("",verifyToken,verifyAdmin,getAllCityByProvinceID)
+routes.get("",verifyToken,getAllCityByProvinceID)
 
 export default routes
 

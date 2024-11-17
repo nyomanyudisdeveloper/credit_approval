@@ -23,6 +23,6 @@ const routes = express.Router()
  *       500:
  *         description: Internal Server Error
  */
-routes.get("",verifyToken,verifyAdmin,getAllProvinces)
+routes.get("",verifyToken,getAllProvinces)
 
 export default routes

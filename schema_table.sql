@@ -1,7 +1,10 @@
 CREATE TABLE users (
-	username VARCHAR(100) PRIMARY KEY NOT NULL,
-	password VARCHAR(100) NOT NULL,
-	role VARCHAR(50) NOT NULL
+	id SERIAL PRIMARY KEY NOT NULL,
+	username TEXT NOT NULL,
+	password TEXT NOT NULL,
+	role TEXT NOT NULL,
+	crud_status TEXT NOT NULL DEFAULT 'A'
+	counter_total_login INT NOT NULL DEFAULT 0
 )
 
 CREATE TABLE occupations (

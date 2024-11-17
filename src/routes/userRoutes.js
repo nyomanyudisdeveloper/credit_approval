@@ -1,5 +1,7 @@
 import express from 'express'
-import { login, registerUser } from '../controllers/userController.js'
+import { getUsersBlocked, login, registerUser, unblockUserByID } from '../controllers/userController.js'
+import { verifyAdmin } from '../middleware/adminMiddleware.js'
+import { verifyToken } from '../middleware/authMiddleware.js'
 
 const routes = express.Router()
 
@@ -80,5 +82,55 @@ routes.post("/register",registerUser)
  *         description: Internal Server Error
  */
 routes.post("/login",login)
+
+/**
+ * @swagger
+ * /api/users/blocked:
+ *   get:
+ *     summary: Get All Users who got blocked
+ *     tags:
+ *        - Users
+ *     security:
+ *       - BearerAuth: []
+ *     description: Get All Users who got blocked
+ *     responses:
+ *       200:
+ *         description: Get All Users who got blocked
+ *       401: 
+ *          description: Access Denied
+ *       500:
+ *         description: Internal Server Error
+ */
+routes.get("/blocked",verifyToken,verifyAdmin,getUsersBlocked)
+
+/**
+ * @swagger
+ * /api/users/unblock/{userID}:
+ *   put:
+ *     summary: Unblock user by id
+ *     tags:
+ *        - Users
+ *     security:
+ *       - BearerAuth: []
+ *     description: Unblock user by id
+ *     parameters:
+ *       - name: userID
+ *         in: path
+ *         required: true
+ *         description: The user id
+ *         schema:
+ *           type: string
+ *           example: "1"
+ *     responses:
+ *       200:
+ *         description: Unblock user success
+ *       401: 
+ *          description: Access Denied
+ *       422: 
+ *          description: Parameter userID not found
+ *       500:
+ *         description: Internal Server Error
+ */
+routes.put("/unblock/:userID",verifyToken,verifyAdmin,unblockUserByID)
 
 export default routes

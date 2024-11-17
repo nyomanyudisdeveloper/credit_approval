@@ -9,6 +9,15 @@ Users:
         -- swagger 
         -- 200 
         -- validation email or password 
+        -- prevent login failed more than 3 times 
+    - get all user blocked (Done)
+        -- swagger 
+        -- 200 
+        -- validation login and admin 
+    - unblock user by id  (Done)
+        -- swagger 
+        -- 200 
+        -- validate param userID, login , and admin
 
 Provinces:
     - get all data  (Done)
@@ -33,3 +42,16 @@ Districts
         -- validate admin only 
         -- validate query city_id
 
+Occupations:
+    - get all data  (Done)
+        -- swagger 
+        -- 200 
+        -- validation already login 
+        -- validate admin only
+
+clients:
+    - get all Data 
+        -- swagger 
+        -- 200 
+        -- validation already login
+        -

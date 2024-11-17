@@ -1,5 +1,6 @@
 import { fetchCreateNewClient, fetchGetPaginationClients, fetchUpdateClientStatus } from "../model/clients.js"
 import sendEmail from "../utils/sendEmail.js"
+import { validateFullNameClient } from "../utils/stringHelper.js"
 
 
 export const getPaginationClients = async (req,res,next) => {
@@ -24,6 +25,35 @@ export const getPaginationClients = async (req,res,next) => {
 export const createNewClient = async (req,res,next) => {
     try{
         const data = req.body
+        const {
+            full_name,
+            birth_place,
+            birth_date,
+            gender,
+            occupation_id,
+            province_id,
+            city_id,
+            district_id,
+            rt,
+            rw,
+            nominal_payment
+        } = req.body
+        if(!full_name || !birth_place || !birth_date || !gender || !occupation_id || !province_id
+            || !city_id || !district_id || !rt || !rw || !nominal_payment 
+        ){
+            return res.status(401).send({
+                error:"Missing body value"
+            })
+        }
+
+        var list_error = []
+        if(validateFullNameClient(full_name)){
+            list_error.push("Full name must dont contain number, special character, and title (like profesor or haji)")
+        }
+        if(gender != 'M' && gender != 'F'){
+            list_error.push("Gender must be M or F")
+        }
+        
         const client = await fetchCreateNewClient(data)
         res.status(200).send(client)
     }

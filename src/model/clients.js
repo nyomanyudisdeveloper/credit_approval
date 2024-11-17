@@ -14,6 +14,7 @@ export const fetchGetPaginationClients = async (limit=5, page=1) => {
 
 export const fetchCreateNewClient = async(data) => {
     const {
+        full_name,
         birth_place,
         birth_date,
         gender,
@@ -27,8 +28,8 @@ export const fetchCreateNewClient = async(data) => {
     } = data
 
     const query = `
-        INSERT INTO clients(birth_place,birth_date,gender,occupation_id,province_id,city_id,district_id,rt,rw,nominal_payment)
-        VALUES ('${birth_place}','${birth_date}','${gender}','${occupation_id}','${province_id}','${city_id}','${district_id}','${rt}','${rw}','${nominal_payment}')
+        INSERT INTO clients(full_name,birth_place,birth_date,gender,occupation_id,province_id,city_id,district_id,rt,rw,nominal_payment)
+        VALUES ('${full_name}','${birth_place}','${birth_date}','${gender}','${occupation_id}','${province_id}','${city_id}','${district_id}','${rt}','${rw}','${nominal_payment}')
         RETURNING *;
     `
 

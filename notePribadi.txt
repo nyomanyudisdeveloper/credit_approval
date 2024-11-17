@@ -33,4 +33,7 @@ Point2x utama :
     - Untuk Database bisa deploy ke superbase 
     - Untuk API bisa deploy ke vercel , untuk node js perlu ditambahkan vercel.json
 
-6. Swagger (Still Progressed)
+6. Swagger 
+    - Untuk dokumentasi API 
+    - Untuk awal2x, tambahkan swaggerConfig.js 
+    - tambahkan anotate swagger untuk setiap routes
