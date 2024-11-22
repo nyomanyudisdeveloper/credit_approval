@@ -3,6 +3,10 @@ import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 import dotenv from 'dotenv'
 import { validateEmail } from "../utils/stringHelper.js"
+import dotenv from 'dotenv'
+dotenv.config()
+
+const enviroment = process.env.ENV || 'development'
 
 dotenv.config()
 
@@ -58,7 +62,7 @@ export const login = async(req,res,next) => {
                 error:"Authentication failed"
             })
         }
-        
+
         const userID = user.id
         var counter_total_login = user.counter_total_login
         if(counter_total_login >=3){
