@@ -8,7 +8,8 @@
     "dev": "NODE_ENV=development node index.js",
     "staging": "NODE_ENV=staging node index.js",
     "prod": "NODE_ENV=prodiuction node index.js",
-    "local": "NODE_ENV=local node index.js"
+    "local": "NODE_ENV=local node index.js",
+    "server": "node index.js"
   },
   "author": "",
   "license": "ISC",
