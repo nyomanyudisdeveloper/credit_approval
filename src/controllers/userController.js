@@ -3,11 +3,12 @@ import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 import dotenv from 'dotenv'
 import { validateEmail } from "../utils/stringHelper.js"
-import dotenv from 'dotenv'
+
+
+
 dotenv.config()
 
 const enviroment = process.env.ENV || 'development'
-
 
 export const registerUser = async (req,res,next) => {
     try{
@@ -98,7 +99,7 @@ export const login = async(req,res,next) => {
     catch(err){
         console.log("err = ",err)
         res.status(500).send({
-            error:"Internal Server Error"
+            error:`Internal Server Error ${enviroment}`
         })
     }
 }
