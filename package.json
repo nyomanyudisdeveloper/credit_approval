@@ -5,10 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=development node index.js",
-    "staging": "NODE_ENV=staging node index.js",
-    "prod": "NODE_ENV=prodiuction node index.js",
-    "local": "NODE_ENV=local node index.js",
     "server": "node index.js"
   },
   "author": "",
