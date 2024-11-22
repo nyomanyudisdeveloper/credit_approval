@@ -8,7 +8,6 @@ dotenv.config()
 
 const enviroment = process.env.ENV || 'development'
 
-dotenv.config()
 
 export const registerUser = async (req,res,next) => {
     try{
