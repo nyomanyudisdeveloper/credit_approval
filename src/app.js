@@ -11,7 +11,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const enviroment = process.env.ENV || 'Development'
+// const enviroment = process.env.ENV || 'Development'
 
 const app = express()
 
@@ -33,7 +33,7 @@ app.use('/api/districts',districRoutes)
 app.use('/api/clients',clientRoutes)
 
 app.get("/", async (req,res,next) => {
-    return res.send(`You are running on ${enviroment}`)
+    return res.send(`You are running on `)
 })
 
 export default app
