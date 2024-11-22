@@ -5,7 +5,7 @@ dotenv.config()
 
 const enviroment = process.env.ENV || 'development'
 var pool = null
-if(enviroment == 'development'){
+if(enviroment == 'Development'){
     pool = new Pool({
         host: process.env.PG_HOST_DEV,
         port: process.env.PG_PORT_DEV,
@@ -14,7 +14,7 @@ if(enviroment == 'development'){
         database: process.env.PG_DATABASE_DEV
     })
 }
-else if(enviroment == 'local'){
+else if(enviroment == 'Local'){
     pool = new Pool({
         host: process.env.PG_HOST_LOCAL,
         port: process.env.PG_PORT_LOCAL,

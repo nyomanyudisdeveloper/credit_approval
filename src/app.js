@@ -7,6 +7,11 @@ import districRoutes from'./routes/districtRoutes.js'
 import clientRoutes from './routes/clientRoutes.js'
 import swaggerSpec from '../swaggerConfig.js'
 import swaggerUi from 'swagger-ui-express'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const enviroment = process.env.ENV || 'Development'
 
 const app = express()
 
@@ -28,7 +33,7 @@ app.use('/api/districts',districRoutes)
 app.use('/api/clients',clientRoutes)
 
 app.get("/", async (req,res,next) => {
-    return res.send("hello")
+    return res.send(`You are running on ${enviroment}`)
 })
 
 export default app
