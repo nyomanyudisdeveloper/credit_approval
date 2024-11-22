@@ -3,7 +3,7 @@ const {Pool} = pkg;
 import dotenv from 'dotenv'
 dotenv.config()
 
-const enviroment = process.env.NODE_ENV || 'development'
+const enviroment = process.env.ENV || 'development'
 var pool = null
 if(enviroment == 'development'){
     pool = new Pool({
