@@ -7,9 +7,9 @@ import districRoutes from'./routes/districtRoutes.js'
 import clientRoutes from './routes/clientRoutes.js'
 import swaggerSpec from '../swaggerConfig.js'
 import swaggerUi from 'swagger-ui-express'
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 
-dotenv.config()
+// dotenv.config()
 
 // const enviroment = process.env.ENV || 'Development'
 
