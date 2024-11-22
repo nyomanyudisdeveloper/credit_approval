@@ -3,9 +3,9 @@ const {Pool} = pkg;
 import dotenv from 'dotenv'
 dotenv.config()
 
-const enviroment = process.env.ENV || 'Development'
+const enviroment = process.env.ENV || 'development'
 var pool = null
-if(enviroment == 'Development'){
+if(enviroment == 'development'){
     pool = new Pool({
         host: process.env.PG_HOST_DEV,
         port: process.env.PG_PORT_DEV,
@@ -14,7 +14,7 @@ if(enviroment == 'Development'){
         database: process.env.PG_DATABASE_DEV
     })
 }
-else if(enviroment == 'Local'){
+else if(enviroment == 'local'){
     pool = new Pool({
         host: process.env.PG_HOST_LOCAL,
         port: process.env.PG_PORT_LOCAL,
