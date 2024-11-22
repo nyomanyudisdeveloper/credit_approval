@@ -12,7 +12,13 @@ const app = express()
 
 app.use(express.json())
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use(
+    '/api-docs',
+    express.static('node_modules/swagger-ui-dist/', {index: false}),
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec),
+);
 
 app.use('/api/occupations', occupationRoutes)
 app.use('/api/provinces', provinceRoutes)
