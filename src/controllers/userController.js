@@ -53,6 +53,12 @@ export const login = async(req,res,next) => {
         }
 
         const user = await fetchGetUserByEmail(email)
+        if(!user){
+            return res.status(401).send({
+                error:"Authentication failed"
+            })
+        }
+        
         const userID = user.id
         var counter_total_login = user.counter_total_login
         if(counter_total_login >=3){
@@ -61,11 +67,7 @@ export const login = async(req,res,next) => {
             })
         }
 
-        if(!user){
-            return res.status(401).send({
-                error:"Authentication failed"
-            })
-        }
+       
 
         const hashedPassword = user.password
         const passwordMatch = await bcrypt.compare(password,hashedPassword)
@@ -91,6 +93,7 @@ export const login = async(req,res,next) => {
                
     }
     catch(err){
+        console.log("err = ",err)
         res.status(500).send({
             error:"Internal Server Error"
         })
