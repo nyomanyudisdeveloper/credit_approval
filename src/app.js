@@ -7,11 +7,12 @@ import districRoutes from'./routes/districtRoutes.js'
 import clientRoutes from './routes/clientRoutes.js'
 import swaggerSpec from '../swaggerConfig.js'
 import swaggerUi from 'swagger-ui-express'
+import cors from 'cors'
 
 const app = express()
 
 app.use(express.json())
-
+app.use(cors())
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // app.use(
 //     '/api-docs',
